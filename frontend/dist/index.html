@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClientSys</title>
+    <link rel="stylesheet" href="./app.css" />
+  </head>
+  <body>
+    <div id="loginScreen" class="auth-screen">
+      <section class="auth-brand">
+        <div class="brand-mark">CS</div>
+        <p class="eyebrow">CLIENTSYS PLATFORM</p>
+        <h1>Работа с клиентами<br />в одном окне</h1>
+        <p class="brand-copy">Профессиональная информационная система для обращений, заказов, коммуникаций и отчетности.</p>
+        <div class="feature-pills">
+          <span>Локальная база</span><span>Отчеты</span><span>Защита данных</span>
+        </div>
+      </section>
+      <section class="auth-panel">
+        <form id="loginForm" class="auth-card">
+          <p class="eyebrow blue">ВХОД В СИСТЕМУ</p>
+          <h2>Добро пожаловать</h2>
+          <p class="muted">Используйте рабочую учетную запись.</p>
+          <label>Логин<input id="loginInput" autocomplete="username" placeholder="admin" required /></label>
+          <label>Пароль<input id="passwordInput" type="password" autocomplete="current-password" placeholder="Введите пароль" required /></label>
+          <button class="btn primary block" type="submit">Войти в ClientSys <span>-></span></button>
+          <div class="login-hint"><strong>Первый вход</strong><span>admin / admin123</span></div>
+        </form>
+      </section>
+    </div>
+
+    <div id="workspace" class="workspace hidden">
+      <aside class="sidebar">
+        <div class="sidebar-brand"><div class="brand-mark small">CS</div><div><strong>ClientSys</strong><small>CRM Workspace</small></div></div>
+        <nav id="navigation">
+          <button class="nav active" data-page="dashboard"><i>▦</i>Обзор</button>
+          <button class="nav" data-page="clients"><i>◯</i>Клиенты</button>
+          <button class="nav" data-page="requests"><i>✉</i>Заявки</button>
+          <button class="nav" data-page="orders"><i>▣</i>Заказы</button>
+          <button class="nav" data-page="interactions"><i>↻</i>Взаимодействия</button>
+          <button class="nav" data-page="reports"><i>▤</i>Отчеты</button>
+          <button class="nav" data-page="users"><i>◎</i>Сотрудники</button>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="secure">● Данные хранятся локально</div>
+          <button id="backupBtn" class="btn sidebar-action">Резервная копия</button>
+        </div>
+      </aside>
+      <main class="main">
+        <header class="topbar">
+          <div><h2 id="pageTitle">Обзор</h2><p id="pageDescription">Сводка состояния клиентской базы</p></div>
+          <div class="top-actions">
+            <button id="refreshBtn" class="icon-btn" title="Обновить">↻</button>
+            <button id="passwordBtn" class="btn ghost">Сменить пароль</button>
+            <div class="profile"><div class="avatar" id="avatar">A</div><div><strong id="userName"></strong><small id="userRole"></small></div></div>
+            <button id="logoutBtn" class="icon-btn" title="Выйти">⇥</button>
+          </div>
+        </header>
+        <div id="content" class="content"></div>
+      </main>
+    </div>
+    <div id="modalRoot"></div>
+    <div id="toastRoot" class="toast-root"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>

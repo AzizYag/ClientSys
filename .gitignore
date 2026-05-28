@@ -1,0 +1,25 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local databases and backups
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
+
+# Editor files
+.idea/
+.vscode/
+
+# Wails development artifacts
+frontend/wailsjs/
+
+# macOS application bundles are distributed as ZIP archives
+*.app/
